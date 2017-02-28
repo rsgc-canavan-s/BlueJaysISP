@@ -22,6 +22,7 @@
 		0961A3421E65FF3400565B4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0961A3451E65FF3400565B4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0961A3471E65FF3400565B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0961A34D1E65FFB600565B4E /* Grade_11_Computer_Science_ISP_Proposal.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Grade_11_Computer_Science_ISP_Proposal.docx; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 		0961A33A1E65FF3400565B4E /* Blue Jays App */ = {
 			isa = PBXGroup;
 			children = (
+				0961A34D1E65FFB600565B4E /* Grade_11_Computer_Science_ISP_Proposal.docx */,
 				0961A33B1E65FF3400565B4E /* AppDelegate.swift */,
 				0961A33D1E65FF3400565B4E /* ViewController.swift */,
 				0961A33F1E65FF3400565B4E /* Main.storyboard */,

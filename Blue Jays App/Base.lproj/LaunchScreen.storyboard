@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,12 +21,40 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jays photo" translatesAutoresizingMaskIntoConstraints="NO" id="pqh-6E-RSW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSY-6Y-KRI">
+                                <rect key="frame" x="49" y="105" width="281" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pqh-6E-RSW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9dj-SP-8l4"/>
+                            <constraint firstItem="pqh-6E-RSW" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="KiK-2d-C7l"/>
+                            <constraint firstItem="pqh-6E-RSW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ReR-Vg-dY0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pqh-6E-RSW" secondAttribute="trailing" constant="103" id="Wiw-SS-EZF"/>
+                            <constraint firstItem="pqh-6E-RSW" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="269" id="Wjr-mu-rhf"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="pqh-6E-RSW" secondAttribute="bottom" id="Xc1-xo-esU"/>
+                            <constraint firstItem="pqh-6E-RSW" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-16" id="bDL-FJ-W9c"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="pqh-6E-RSW" secondAttribute="leading" id="dWI-Xb-7bD"/>
+                            <constraint firstItem="pqh-6E-RSW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="guQ-9f-ooi"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="pqh-6E-RSW" secondAttribute="bottom" constant="270" id="hWj-f2-7F6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pqh-6E-RSW" secondAttribute="trailing" constant="-16" id="yC6-ab-29e"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="jays photo" width="640" height="960"/>
+    </resources>
 </document>

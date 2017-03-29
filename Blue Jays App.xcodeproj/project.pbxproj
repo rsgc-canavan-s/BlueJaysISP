@@ -15,6 +15,7 @@
 		0961A34F1E66069300565B4E /* april 4 2017.json in Resources */ = {isa = PBXBuildFile; fileRef = 0961A34E1E66069300565B4E /* april 4 2017.json */; };
 		0961A3521E66093700565B4E /* image1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0961A3501E66093700565B4E /* image1.JPG */; };
 		0961A3531E66093700565B4E /* image2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0961A3511E66093700565B4E /* image2.JPG */; };
+		0961A3571E68639F00565B4E /* jays photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0961A3561E68639F00565B4E /* jays photo.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		0961A34E1E66069300565B4E /* april 4 2017.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "april 4 2017.json"; path = "../april 4 2017.json"; sourceTree = "<group>"; };
 		0961A3501E66093700565B4E /* image1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image1.JPG; path = ../image1.JPG; sourceTree = "<group>"; };
 		0961A3511E66093700565B4E /* image2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image2.JPG; path = ../image2.JPG; sourceTree = "<group>"; };
+		0961A3561E68639F00565B4E /* jays photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "jays photo.jpg"; path = "../../../jays photo.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				0961A33B1E65FF3400565B4E /* AppDelegate.swift */,
 				0961A33D1E65FF3400565B4E /* ViewController.swift */,
 				0961A33F1E65FF3400565B4E /* Main.storyboard */,
+				0961A3561E68639F00565B4E /* jays photo.jpg */,
 				0961A3421E65FF3400565B4E /* Assets.xcassets */,
 				0961A3441E65FF3400565B4E /* LaunchScreen.storyboard */,
 				0961A3471E65FF3400565B4E /* Info.plist */,
@@ -139,6 +142,7 @@
 				0961A3521E66093700565B4E /* image1.JPG in Resources */,
 				0961A3431E65FF3400565B4E /* Assets.xcassets in Resources */,
 				0961A3411E65FF3400565B4E /* Main.storyboard in Resources */,
+				0961A3571E68639F00565B4E /* jays photo.jpg in Resources */,
 				0961A34F1E66069300565B4E /* april 4 2017.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +315,7 @@
 				0961A34C1E65FF3400565B4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

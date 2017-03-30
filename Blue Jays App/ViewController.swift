@@ -21,5 +21,9 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func buttonClick(_ sender: Any) {
+        
+        print("clicked")
+    }
 }
 

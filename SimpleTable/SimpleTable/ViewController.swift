@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  Blue Jays App
+//  SimpleTable
 //
-//  Created by Spencer Canavan on 2017-02-28.
+//  Created by Spencer Canavan on 2017-03-31.
 //  Copyright © 2017 Spencer Canavan. All rights reserved.
 //
 
@@ -20,24 +20,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func scoresAndSchedule(_ sender: Any) {
-        
-    }
 
-    @IBAction func news(_ sender: Any) {
-        
-    }
-    
-    @IBAction func roster(_ sender: Any) {
-        
-    }
-    
-
-    @IBAction func statistics(_ sender: Any) {
-        
-    }
-
-    
 }
-
 

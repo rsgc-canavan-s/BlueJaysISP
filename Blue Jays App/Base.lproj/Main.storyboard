@@ -57,19 +57,29 @@
                                                 <state key="normal" title="Scores and Schedule"/>
                                                 <connections>
                                                     <action selector="buttonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ETL-8z-GM7"/>
+                                                    <action selector="scoresAndSchedule:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oBS-HG-7ZT"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jur-25-J5K">
                                                 <rect key="frame" x="0.0" y="146" width="375" height="145.5"/>
                                                 <state key="normal" title="News"/>
+                                                <connections>
+                                                    <action selector="news:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qO4-WW-qrR"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLI-Pz-eeG">
                                                 <rect key="frame" x="0.0" y="291.5" width="375" height="146"/>
                                                 <state key="normal" title="Roster"/>
+                                                <connections>
+                                                    <action selector="roster:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P19-eu-D1e"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPv-1M-sOp">
                                                 <rect key="frame" x="0.0" y="437.5" width="375" height="145.5"/>
                                                 <state key="normal" title="Statistics"/>
+                                                <connections>
+                                                    <action selector="statistics:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nDn-Bj-fvX"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -93,10 +103,57 @@
                             <constraint firstItem="UyC-7H-ueh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="ur8-a4-CdW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="socresAndSched" destination="uCW-aN-Kf0" id="Q7l-VL-DvU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="136.28185907046478"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NLF-2a-Qqm">
+            <objects>
+                <viewController id="xQq-sQ-lvC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jIc-gD-v5n"/>
+                        <viewControllerLayoutGuide type="bottom" id="k5W-pn-eMG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lsR-wA-0vt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mvU-jD-dh3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="FPJ-OI-ggU" style="IBUITableViewCellStyleDefault" id="nWU-CC-D5J">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nWU-CC-D5J" id="S9I-bn-cmG" userLabel="Cell">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FPJ-OI-ggU">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g1x-mV-Og3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776.79999999999995" y="135.38230884557723"/>
         </scene>
     </scenes>
 </document>

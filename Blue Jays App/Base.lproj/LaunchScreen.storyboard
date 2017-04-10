@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,44 +23,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jays photo" translatesAutoresizingMaskIntoConstraints="NO" id="pqh-6E-RSW">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lAr-kU-Qw5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSY-6Y-KRI">
-                                <rect key="frame" x="16" y="106" width="343" height="65"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="JAYS APP">
-                                        <attributes>
-                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <font key="NSFont" size="64" name="Courier-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSY-6Y-KRI">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
+                                        <color key="backgroundColor" red="0.027450980390000001" green="0.1176470588" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="JAYS APP">
+                                                <attributes>
+                                                    <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="64" name="Courier-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jays photo" translatesAutoresizingMaskIntoConstraints="NO" id="pqh-6E-RSW">
+                                        <rect key="frame" x="0.0" y="104.5" width="375" height="562.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="pqh-6E-RSW" secondAttribute="height" multiplier="640:960" id="eoJ-kz-tYe"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.027450980392156862" green="0.11764705882352941" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="pqh-6E-RSW" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="KiK-2d-C7l"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tSY-6Y-KRI" secondAttribute="trailing" constant="32.587659222694299" id="Sqw-xy-ad3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pqh-6E-RSW" secondAttribute="trailing" constant="103" id="Wiw-SS-EZF"/>
-                            <constraint firstItem="pqh-6E-RSW" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="269" id="Wjr-mu-rhf"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="pqh-6E-RSW" secondAttribute="bottom" id="Xc1-xo-esU"/>
-                            <constraint firstItem="pqh-6E-RSW" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-16" id="bDL-FJ-W9c"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="pqh-6E-RSW" secondAttribute="leading" id="dWI-Xb-7bD"/>
-                            <constraint firstItem="tSY-6Y-KRI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="g6x-zR-uwl"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="pqh-6E-RSW" secondAttribute="bottom" constant="270" id="hWj-f2-7F6"/>
-                            <constraint firstItem="tSY-6Y-KRI" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="29.412340777305701" id="mH1-ZP-ziX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pqh-6E-RSW" secondAttribute="trailing" constant="-16" id="yC6-ab-29e"/>
+                            <constraint firstItem="lAr-kU-Qw5" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="48I-Xb-LmW"/>
+                            <constraint firstAttribute="trailing" secondItem="lAr-kU-Qw5" secondAttribute="trailing" id="KqE-GG-Gap"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="lAr-kU-Qw5" secondAttribute="bottom" id="bNV-f2-ZTs"/>
+                            <constraint firstItem="lAr-kU-Qw5" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="iR5-z8-mUC"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="525.60000000000002" y="250.52473763118442"/>
         </scene>
     </scenes>
     <resources>

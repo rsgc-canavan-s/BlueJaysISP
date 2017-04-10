@@ -103,9 +103,6 @@
                             <constraint firstItem="UyC-7H-ueh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="ur8-a4-CdW"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="socresAndSched" destination="uCW-aN-Kf0" id="Q7l-VL-DvU"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

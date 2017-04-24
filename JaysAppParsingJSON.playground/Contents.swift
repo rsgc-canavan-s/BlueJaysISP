@@ -71,6 +71,8 @@ func getJSON(forResource resource : String, ofType type : String) -> Data? {
 // Purpose: Parse a String containing JSON data and return a Swift-native data structure containing relevant data
 func parse(_ JSON : Data) {
     
+    var parsedData : [jaysDataList] = []
+    
     // Create an empty array of the structure that will contain data about a cooling centre
     
     // Begin parsing the cooling centre data
@@ -128,33 +130,42 @@ func parse(_ JSON : Data) {
             }
             print(aGame["home_team_name"])
             
-            var homeTeamName: String = String(describing: aGame["home_team_name"])
-            var awayTeamName: String = String(describing: aGame["away_team_name"])
+            let homeTeamName: String = String(describing: aGame["home_team_name"])
+            let awayTeamName: String = String(describing: aGame["away_team_name"])
+            
+            /*
+             guard let homeTeamName = aGame["home_team_name"] as? String else {
+             print("Could not get the Home team's name")
+             return
+             }
+             
+             guard let awayTeamName = aGame["away_team_name"] as? String else {
+             print("Could not get away team name")
+             return
+             }
+             */
+            guard let startTime = aGame["time"] as? Double else {
+                print("Could not get start time")
+                return
+            }
+            
+            guard let location = aGame["location"] as? String else {
+                print("Could not get location")
+                return
+            }
+            
+            guard let runsScored = aGame["r"] as? [String : Int] else {
+                print("Could not get the runs scored")
+                return
+            }
+            let homeTeamRuns: Int = Int(runsScored["home"]!)
+            let awayTeamRuns: Int = Int(runsScored["away"]!)
             
             if homeTeamName == ("Blue Jays") || awayTeamName == ("Blue Jays"){
                 print("We've found it!")
-                guard let homeTeamName = aGame["home_team_name"] as? String else {
-                    print("Could not get the Home team's name")
-                    return
-                }
-                
-                guard let awayTeamName = aGame["away_team_name"] as? String else {
-                    print("Could not get away team name")
-                    return
-                }
-                
-                guard let startTime = aGame["time"] as? Double else {
-                    print("Could not get start time")
-                    return
-                }
-                
-                guard let runsScored = aGame["r"] as? [String : Int] else {
-                    print("Could not get the runs scored")
-                    return
-                }
-                var homeTeamRuns: Int = Int(runsScored["home"]!)
-                var awayTeamRuns: Int = Int(runsScored["away"]!)
+                parsedData.append(jaysDataList(homeTeamName: homeTeamName, awayTeamName: awayTeamName, startTime: startTime, location: location, homeTeamRuns: homeTeamRuns, awayTeamRuns: awayTeamRuns))
             }
+            
         }
         
         
@@ -172,7 +183,11 @@ func parse(_ JSON : Data) {
 if let json = getJSON(forResource: "gameData", ofType: "json") {
     
     // Now parse the JSON into Swift-native data structures...
-    parse(json)
+    if let gameData = parse(json) {
+           print(gameData)
+    }
+    
+
     
 } else {
     

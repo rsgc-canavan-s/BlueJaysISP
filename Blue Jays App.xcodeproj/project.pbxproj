@@ -29,6 +29,7 @@
 		0961A3501E66093700565B4E /* image1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image1.JPG; path = ../image1.JPG; sourceTree = "<group>"; };
 		0961A3511E66093700565B4E /* image2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image2.JPG; path = ../image2.JPG; sourceTree = "<group>"; };
 		098F21601E9EA8D300472618 /* Independent_Study_Project_-_Checkpoint_1.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Independent_Study_Project_-_Checkpoint_1.docx"; path = "../../../../Downloads/Independent_Study_Project_-_Checkpoint_1.docx"; sourceTree = "<group>"; };
+		09C88F381EAD85D50067DE34 /* JaysAppParsingJSON.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JaysAppParsingJSON.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +46,7 @@
 		0961A32F1E65FF3300565B4E = {
 			isa = PBXGroup;
 			children = (
+				09C88F381EAD85D50067DE34 /* JaysAppParsingJSON.playground */,
 				0961A33A1E65FF3400565B4E /* Blue Jays App */,
 				0961A3391E65FF3400565B4E /* Products */,
 			);

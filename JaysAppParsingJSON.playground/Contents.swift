@@ -24,15 +24,26 @@ import UIKit
 
 import Foundation
 
-struct jaysDataList {
+struct JaysDataList {
     var homeTeamName : String
     var awayTeamName : String
-    var startTime : Double
+    var startTime : String
     var location : String
-    var homeTeamRuns : Int
-    var awayTeamRuns : Int
+    var stadium : String
+    var homeTeamRuns : String
+    var awayTeamRuns : String
+    var losingPitcherName : String
+    var winningPitcherName : String
 }
-
+var jaysRuns : Int = 0
+var oppRuns : Int = 0
+var outcome : String = ""
+var jaysRunsString : String = ""
+var oppRunsString : String = ""
+var outcomeScore : String = ""
+var winningTeam : String = ""
+var winningPitcherName : String = ""
+var losingPitcherName : String = ""
 // getJSON
 //
 // Purpose: Open a JSON file included in the playground Resources folder and return the contents of the file as JSON data
@@ -71,7 +82,7 @@ func getJSON(forResource resource : String, ofType type : String) -> Data? {
 // Purpose: Parse a String containing JSON data and return a Swift-native data structure containing relevant data
 func parse(_ JSON : Data) {
     
-    var parsedData : [jaysDataList] = []
+    var parsedData : [JaysDataList] = []
     
     // Create an empty array of the structure that will contain data about a cooling centre
     
@@ -125,47 +136,146 @@ func parse(_ JSON : Data) {
         // Now iterate over each game
         for game in games {
             
+            // iterating through each of the games in the total array of games
             guard let aGame = game as? [String : Any]  else {
                 return
             }
-            print(aGame["home_team_name"])
             
-            let homeTeamName: String = String(describing: aGame["home_team_name"])
-            let awayTeamName: String = String(describing: aGame["away_team_name"])
+            // getting the home team's name
+            guard let homeTeamName = aGame["home_team_name"] as? String else {
+                print("Could not get the home team name")
+                return
+            }
             
-            /*
-             guard let homeTeamName = aGame["home_team_name"] as? String else {
-             print("Could not get the Home team's name")
-             return
-             }
-             
-             guard let awayTeamName = aGame["away_team_name"] as? String else {
-             print("Could not get away team name")
-             return
-             }
-             */
-            guard let startTime = aGame["time"] as? Double else {
+            // getting the away team's name
+            guard let awayTeamName = aGame["away_team_name"] as? String else {
+                print("Could not get the home team name")
+                return
+            }
+            
+            // making sure that these guard let statements are successful
+            //print(awayTeamName + " at " + homeTeamName)
+            
+            // gets the start time of each game
+            guard let startTime = aGame["time"] as? String else {
                 print("Could not get start time")
                 return
             }
             
+            // gets the location of each game
             guard let location = aGame["location"] as? String else {
                 print("Could not get location")
                 return
             }
             
-            guard let runsScored = aGame["r"] as? [String : Int] else {
+            //gets the stadium name
+            guard let stadium = aGame["venue"] as? String else {
+                print("Could not find the stadium")
+                return
+            }
+            
+            // iterates through each games "linescore," which contains the runs scored from each team
+            //print(aGame["linescore"])
+            
+            guard let runsScored = aGame["linescore"] as? [String : Any] else {
                 print("Could not get the runs scored")
                 return
             }
-            let homeTeamRuns: Int = Int(runsScored["home"]!)
-            let awayTeamRuns: Int = Int(runsScored["away"]!)
             
-            if homeTeamName == ("Blue Jays") || awayTeamName == ("Blue Jays"){
-                print("We've found it!")
-                parsedData.append(jaysDataList(homeTeamName: homeTeamName, awayTeamName: awayTeamName, startTime: startTime, location: location, homeTeamRuns: homeTeamRuns, awayTeamRuns: awayTeamRuns))
+            // iterating through the "r" array which is the runs scored by each team
+            guard let runs = runsScored["r"] as? [String: String] else {
+                print("Could not get the runs")
+                return
             }
             
+            // geting the home team runs
+            guard let homeTeamRuns = runs["home"] as String! else {
+                print("Can't get the home team runs")
+                return
+            }
+            
+            // getting the away team runs
+            guard let awayTeamRuns = runs["away"] as String! else {
+                print("Can't get the away team runs")
+                return
+            }
+            // iterate over the losing pitcher array
+            guard let losingPitcher = aGame["losing_pitcher"] as? [String: Any] else {
+                print("Could not get the losing pitcher")
+                return
+            }
+            // get the pitcher's last name
+            guard let lastNameLP = losingPitcher["last"] as? String else {
+                print("Could not get losing pitcher's last name")
+                return
+            }
+            // get the pitcher's first name
+            guard let firstNameLP = losingPitcher["first"] as? String else {
+                print("Could not get losing pitcher's first name")
+                return
+            }
+            // iterating over the winning pitcher array
+            guard let winningPitcher = aGame["winning_pitcher"] as? [String: Any] else {
+                print("Could not het winning pitcher's data")
+                return
+            }
+            // getting the winning pitcher's last name
+            guard let lastNameWP = winningPitcher["last"] as? String else {
+                print("Could not get winning pitcher's last name")
+                return
+            }
+            // getting the winning pitcher's first name
+            guard let firstNameWP = winningPitcher["first"] as? String else {
+                print("Could not get winning pitcher's first name")
+                return
+            }
+            
+            winningPitcherName = (firstNameWP + " " + lastNameWP)
+            losingPitcherName = (firstNameLP + " " + lastNameLP)
+            
+            // appending all of the collected data to "parsedData"
+            if homeTeamName == ("Blue Jays") || awayTeamName == ("Blue Jays"){
+                
+                print("We've found it!")
+                
+                parsedData.append(JaysDataList(homeTeamName: homeTeamName, awayTeamName: awayTeamName, startTime: startTime, location: location, stadium: stadium, homeTeamRuns: homeTeamRuns, awayTeamRuns: awayTeamRuns, losingPitcherName: (firstNameLP+lastNameLP), winningPitcherName: (firstNameWP+lastNameWP)))
+
+                
+                //switching the runs scored by each team to an integer
+                let homeRunsAsInt : Int = Int(homeTeamRuns)!
+                let awayRunsAsInt : Int = Int(awayTeamRuns)!
+                
+                // figuring out if the Jays were at home or away
+                if homeTeamName == "Blue Jays" {
+                    // changing the runs scored to integers
+                    jaysRuns = homeRunsAsInt
+                    oppRuns = awayRunsAsInt
+                    // getting the runs scored as strings with the winner correctly defined
+                    jaysRunsString = homeTeamRuns
+                    oppRunsString = awayTeamRuns
+                } else {
+                    // changing the runs scored to integers
+                    jaysRuns = awayRunsAsInt
+                    oppRuns = homeRunsAsInt
+                    // getting the runs scored as strings with the winner correctly defined
+                    jaysRunsString = awayTeamRuns
+                    oppRunsString = homeTeamRuns
+                }
+
+                
+                if jaysRuns - oppRuns > 0 {
+                    outcome = "won 😀"
+                    outcomeScore = (jaysRunsString + " to " + oppRunsString)
+                } else {
+                    outcome = "sadly lost"
+                    outcomeScore = (oppRunsString + " to " + jaysRunsString)
+                }
+                print("Today the Blue Jays played at " + stadium)
+                print("The Toronto Blue Jays scored " + jaysRunsString + " runs")
+                print("The " + awayTeamName + " scored " + oppRunsString)
+                print("So, the Jays " + outcome + ", the outcome being " + outcomeScore)
+                print("The winning pitcher was " + winningPitcherName + " and the losing pitcher was " + losingPitcherName)
+            }
         }
         
         
@@ -183,11 +293,14 @@ func parse(_ JSON : Data) {
 if let json = getJSON(forResource: "gameData", ofType: "json") {
     
     // Now parse the JSON into Swift-native data structures...
-    if let gameData = parse(json) {
-           print(gameData)
-    }
+    parse(json)
+    /*
+     if let gameData = parse(json) {
+     print(gameData)
+     }
+     */
     
-
+    
     
 } else {
     

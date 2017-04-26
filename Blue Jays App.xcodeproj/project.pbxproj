@@ -14,7 +14,6 @@
 		0961A3461E65FF3400565B4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0961A3441E65FF3400565B4E /* LaunchScreen.storyboard */; };
 		0961A3521E66093700565B4E /* image1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0961A3501E66093700565B4E /* image1.JPG */; };
 		0961A3531E66093700565B4E /* image2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0961A3511E66093700565B4E /* image2.JPG */; };
-		098F21611E9EA8D300472618 /* Independent_Study_Project_-_Checkpoint_1.docx in Resources */ = {isa = PBXBuildFile; fileRef = 098F21601E9EA8D300472618 /* Independent_Study_Project_-_Checkpoint_1.docx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +27,8 @@
 		0961A34D1E65FFB600565B4E /* Grade_11_Computer_Science_ISP_Proposal.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Grade_11_Computer_Science_ISP_Proposal.docx; sourceTree = SOURCE_ROOT; };
 		0961A3501E66093700565B4E /* image1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image1.JPG; path = ../image1.JPG; sourceTree = "<group>"; };
 		0961A3511E66093700565B4E /* image2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image2.JPG; path = ../image2.JPG; sourceTree = "<group>"; };
-		098F21601E9EA8D300472618 /* Independent_Study_Project_-_Checkpoint_1.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Independent_Study_Project_-_Checkpoint_1.docx"; path = "../../../../Downloads/Independent_Study_Project_-_Checkpoint_1.docx"; sourceTree = "<group>"; };
 		09C88F381EAD85D50067DE34 /* JaysAppParsingJSON.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JaysAppParsingJSON.playground; sourceTree = "<group>"; };
+		09C88F391EB111A30067DE34 /* Independent_Study_Project_-_Checkpoint_1.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Independent_Study_Project_-_Checkpoint_1.docx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +62,7 @@
 		0961A33A1E65FF3400565B4E /* Blue Jays App */ = {
 			isa = PBXGroup;
 			children = (
-				098F21601E9EA8D300472618 /* Independent_Study_Project_-_Checkpoint_1.docx */,
+				09C88F391EB111A30067DE34 /* Independent_Study_Project_-_Checkpoint_1.docx */,
 				0961A3511E66093700565B4E /* image2.JPG */,
 				0961A3501E66093700565B4E /* image1.JPG */,
 				0961A34D1E65FFB600565B4E /* Grade_11_Computer_Science_ISP_Proposal.docx */,
@@ -138,7 +137,6 @@
 			files = (
 				0961A3531E66093700565B4E /* image2.JPG in Resources */,
 				0961A3461E65FF3400565B4E /* LaunchScreen.storyboard in Resources */,
-				098F21611E9EA8D300472618 /* Independent_Study_Project_-_Checkpoint_1.docx in Resources */,
 				0961A3521E66093700565B4E /* image1.JPG in Resources */,
 				0961A3431E65FF3400565B4E /* Assets.xcassets in Resources */,
 				0961A3411E65FF3400565B4E /* Main.storyboard in Resources */,

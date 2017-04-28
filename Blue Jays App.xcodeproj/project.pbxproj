@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09596E361EB3BF5D007ACEBA /* Independent_Study_Project_-_Checkpoint_1.docx in Resources */ = {isa = PBXBuildFile; fileRef = 09596E351EB3BF5D007ACEBA /* Independent_Study_Project_-_Checkpoint_1.docx */; };
 		0961A33C1E65FF3400565B4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A33B1E65FF3400565B4E /* AppDelegate.swift */; };
 		0961A33E1E65FF3400565B4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A33D1E65FF3400565B4E /* ViewController.swift */; };
 		0961A3411E65FF3400565B4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0961A33F1E65FF3400565B4E /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09596E351EB3BF5D007ACEBA /* Independent_Study_Project_-_Checkpoint_1.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Independent_Study_Project_-_Checkpoint_1.docx"; path = "../Independent_Study_Project_-_Checkpoint_1.docx"; sourceTree = "<group>"; };
 		0961A3381E65FF3400565B4E /* Blue Jays App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blue Jays App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0961A33B1E65FF3400565B4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0961A33D1E65FF3400565B4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,7 +30,6 @@
 		0961A3501E66093700565B4E /* image1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image1.JPG; path = ../image1.JPG; sourceTree = "<group>"; };
 		0961A3511E66093700565B4E /* image2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image2.JPG; path = ../image2.JPG; sourceTree = "<group>"; };
 		09C88F381EAD85D50067DE34 /* JaysAppParsingJSON.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JaysAppParsingJSON.playground; sourceTree = "<group>"; };
-		09C88F391EB111A30067DE34 /* Independent_Study_Project_-_Checkpoint_1.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Independent_Study_Project_-_Checkpoint_1.docx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +63,7 @@
 		0961A33A1E65FF3400565B4E /* Blue Jays App */ = {
 			isa = PBXGroup;
 			children = (
-				09C88F391EB111A30067DE34 /* Independent_Study_Project_-_Checkpoint_1.docx */,
+				09596E351EB3BF5D007ACEBA /* Independent_Study_Project_-_Checkpoint_1.docx */,
 				0961A3511E66093700565B4E /* image2.JPG */,
 				0961A3501E66093700565B4E /* image1.JPG */,
 				0961A34D1E65FFB600565B4E /* Grade_11_Computer_Science_ISP_Proposal.docx */,
@@ -137,6 +138,7 @@
 			files = (
 				0961A3531E66093700565B4E /* image2.JPG in Resources */,
 				0961A3461E65FF3400565B4E /* LaunchScreen.storyboard in Resources */,
+				09596E361EB3BF5D007ACEBA /* Independent_Study_Project_-_Checkpoint_1.docx in Resources */,
 				0961A3521E66093700565B4E /* image1.JPG in Resources */,
 				0961A3431E65FF3400565B4E /* Assets.xcassets in Resources */,
 				0961A3411E65FF3400565B4E /* Main.storyboard in Resources */,

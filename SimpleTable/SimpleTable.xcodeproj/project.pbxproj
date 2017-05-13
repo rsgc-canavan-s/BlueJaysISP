@@ -12,7 +12,6 @@
 		095E259B1E8ED08800C05C5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 095E25991E8ED08800C05C5B /* Main.storyboard */; };
 		095E259D1E8ED08800C05C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 095E259C1E8ED08800C05C5B /* Assets.xcassets */; };
 		095E25A01E8ED08800C05C5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 095E259E1E8ED08800C05C5B /* LaunchScreen.storyboard */; };
-		095E25AA1E8EDB4B00C05C5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 095E25A91E8EDB4B00C05C5B /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +22,6 @@
 		095E259C1E8ED08800C05C5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		095E259F1E8ED08800C05C5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		095E25A11E8ED08800C05C5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		095E25A91E8EDB4B00C05C5B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +57,6 @@
 				095E25951E8ED08800C05C5B /* AppDelegate.swift */,
 				095E25971E8ED08800C05C5B /* ViewController.swift */,
 				095E25991E8ED08800C05C5B /* Main.storyboard */,
-				095E25A91E8EDB4B00C05C5B /* Main.storyboard */,
 				095E259C1E8ED08800C05C5B /* Assets.xcassets */,
 				095E259E1E8ED08800C05C5B /* LaunchScreen.storyboard */,
 				095E25A11E8ED08800C05C5B /* Info.plist */,
@@ -129,7 +126,6 @@
 				095E25A01E8ED08800C05C5B /* LaunchScreen.storyboard in Resources */,
 				095E259D1E8ED08800C05C5B /* Assets.xcassets in Resources */,
 				095E259B1E8ED08800C05C5B /* Main.storyboard in Resources */,
-				095E25AA1E8EDB4B00C05C5B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +297,7 @@
 				095E25A61E8ED08800C05C5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

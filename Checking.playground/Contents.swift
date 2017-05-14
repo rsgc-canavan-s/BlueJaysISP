@@ -2,30 +2,10 @@
 
 import UIKit
 
-/*:
- 
- # Parsing JSON From a Local File
- 
- "This JSON dataset identifies public locations and cooling centres in the City of Toronto that offer an air-conditioned space for temporary relief on heat alert and extreme heat alert days."
- 
- [Source](http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=e7356d1900531510VgnVCM10000071d60f89RCRD&vgnextchannel=1a66e03bb8d1e310VgnVCM10000071d60f89RCRD)
- 
- ## Your goal
- 
- The code below loads a JSON file contained within this playground.
- 
- Use optional binding (with *if let* statements or *guard let* statements inside a function) to parse the raw JSON data into Swift-native data structures.
- 
- A good first step is to examine the data contained inside the file, and by hand, make a plan for what Swift-native data types you will parse the data into.
- 
- Then, write the code to do the parsing.
- 
- */
+var numberOfGameData : Int = 0
+var arrayOfGameData : [String] = []
 
-import Foundation
-
-
-
+// holds all of the data that I will parse
 struct JaysDataList {
     var homeTeamName : String
     var awayTeamName : String
@@ -37,6 +17,8 @@ struct JaysDataList {
     var losingPitcherName : String
     var winningPitcherName : String
 }
+
+// declaring variables that I will use
 var jaysRuns : Int = 0
 var oppRuns : Int = 0
 var outcome : String = ""
@@ -46,43 +28,13 @@ var outcomeScore : String = ""
 var winningTeam : String = ""
 var winningPitcherName : String = ""
 var losingPitcherName : String = ""
+var jaysName : String = ""
+var oppName : String = ""
+
 // getJSON
 //
 // Purpose: Open a JSON file included in the playground Resources folder and return the contents of the file as JSON data
-func getJSON(forResource resource : String, ofType type : String) -> Data? {
-    
-    
-    // Obtain the path to file in the playground bundle
-    guard let path = Bundle.main.path(forResource: resource, ofType: type) else {
-        
-        // Early exit from function with error
-        print("File path not found.")
-        return nil
-        
-    }
-    
-    // Read the raw data in the file
-    guard let data = FileManager.default.contents(atPath: path) else {
-        
-        // Early exit from function with error
-        print("Could not read data from file.")
-        return nil
-    }
-    
-    // Return the JSON data
-    return data
-    
-}
-
-// CoolingCentre
-//
-// Purpose: Store information we care about from the JSON file.
-
-
-// parseJSON
-//
-// Purpose: Parse a String containing JSON data and return a Swift-native data structure containing relevant data
-func parse(_ JSON : Data) {
+func parseMyJSON(_ JSON : Data) {
     
     var parsedData : [JaysDataList] = []
     
@@ -125,15 +77,6 @@ func parse(_ JSON : Data) {
             print("could not get array of games")
             return
         }
-        /*
-         struct jaysDataList {
-         var homeTeamName : String
-         var awayTeamName : String
-         var startTime : Double
-         var location : String
-         var finalScore : Double
-         }
-         */
         
         // Now iterate over each game
         for game in games {
@@ -177,6 +120,7 @@ func parse(_ JSON : Data) {
             }
             
             // iterates through each games "linescore," which contains the runs scored from each team
+            // this was a test to see if I was able to parse correctly
             //print(aGame["linescore"])
             
             guard let runsScored = aGame["linescore"] as? [String : Any] else {
@@ -232,6 +176,7 @@ func parse(_ JSON : Data) {
                 return
             }
             
+            // making a string of the winning and losing pitchers so I can print them
             winningPitcherName = (firstNameWP + " " + lastNameWP)
             losingPitcherName = (firstNameLP + " " + lastNameLP)
             
@@ -241,7 +186,7 @@ func parse(_ JSON : Data) {
                 print("We've found it!")
                 
                 parsedData.append(JaysDataList(homeTeamName: homeTeamName, awayTeamName: awayTeamName, startTime: startTime, location: location, stadium: stadium, homeTeamRuns: homeTeamRuns, awayTeamRuns: awayTeamRuns, losingPitcherName: (firstNameLP+lastNameLP), winningPitcherName: (firstNameWP+lastNameWP)))
-
+                
                 
                 //switching the runs scored by each team to an integer
                 let homeRunsAsInt : Int = Int(homeTeamRuns)!
@@ -252,6 +197,10 @@ func parse(_ JSON : Data) {
                     // changing the runs scored to integers
                     jaysRuns = homeRunsAsInt
                     oppRuns = awayRunsAsInt
+                    // setting the Jays name (I know it's not necessary but hey)
+                    jaysName = homeTeamName
+                    // Setting the opponents name
+                    oppName = awayTeamName
                     // getting the runs scored as strings with the winner correctly defined
                     jaysRunsString = homeTeamRuns
                     oppRunsString = awayTeamRuns
@@ -259,17 +208,24 @@ func parse(_ JSON : Data) {
                     // changing the runs scored to integers
                     jaysRuns = awayRunsAsInt
                     oppRuns = homeRunsAsInt
+                    // setting the Jays name (I know it's not necessary but hey)
+                    jaysName = awayTeamName
+                    // setting the opponents name
+                    oppName = homeTeamName
                     // getting the runs scored as strings with the winner correctly defined
                     jaysRunsString = awayTeamRuns
                     oppRunsString = homeTeamRuns
                 }
-
+                
+                var gameScore : String = ("Jays" + jaysRunsString + "Opposition" + oppRunsString)
+                
+                arrayOfGameData.append(gameScore)
                 
                 if jaysRuns - oppRuns > 0 {
-                    outcome = "won 😀"
+                    outcome = "won"
                     outcomeScore = (jaysRunsString + " to " + oppRunsString)
                 } else {
-                    outcome = "sadly lost"
+                    outcome = "lost"
                     outcomeScore = (oppRunsString + " to " + jaysRunsString)
                 }
                 print("Today the Blue Jays played at " + stadium)
@@ -278,6 +234,10 @@ func parse(_ JSON : Data) {
                 print("So, the Jays " + outcome + ", the outcome being " + outcomeScore)
                 print("The winning pitcher was " + winningPitcherName + " and the losing pitcher was " + losingPitcherName)
             }
+            
+            // here we are going to attach the data that we parsed to the array to it can be read and printed to the app
+            arrayOfGameData.append("" + outcome +  " " + jaysName + "" + jaysRunsString + " vs. " + oppName + "" + oppRunsString)
+            print(arrayOfGameData)
         }
         
         
@@ -291,21 +251,77 @@ func parse(_ JSON : Data) {
     
 }
 
-// Attempt to get the JSON data from the file
-if let json = getJSON(forResource: "gameData", ofType: "json") {
+func getMyJSON() {
     
-    // Now parse the JSON into Swift-native data structures...
-    parse(json)
-    /*
-     if let gameData = parse(json) {
-     print(gameData)
-     }
-     */
+    var actualURL : String = ""
     
+    let startOfURL = "http://gd2.mlb.com/components/game/mlb/year_"
     
+    let today = Date()
     
-} else {
+    let todayString = today.description
     
-    // Error
-    print("Could not get JSON data from the file.")
+    // Explode based on a deliminer of " "
+    let todayStringParts = todayString.components(separatedBy: " ")
+    
+    var year : String = ""
+    var month : String = ""
+    var day : String = ""
+    if let todayStartingSeperated = todayStringParts.first {
+        
+        // explode the first element of the array based on "-"
+        let components = todayStartingSeperated.components(separatedBy: "-")
+        year = components[0]
+        month = components[1]
+        day = components[2]
+    }
+    
+    actualURL = ((startOfURL) + (year) + "/month_" + (month) +  "/day_" + (day) + "/master_scoreboard.json")
+    
+    // Define a URL to retrieve a JSON file from
+    let address : String = actualURL
+    
+    // Try to make a URL request object
+    if let url = URL(string: address) {
+        
+        // We have an valid URL to work with
+        print(url)
+        
+        // Now we create a URL request object
+        let urlRequest = URLRequest(url: url)
+        
+        // Now we need to create an NSURLSession object to send the request to the server
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        // Now we create the data task and specify the completion handler
+        let task = session.dataTask(with: urlRequest) {
+            (data, response, error) in
+            
+            // Cast the NSURLResponse object into an NSHTTPURLResponse objecct
+            if let r = response as? HTTPURLResponse {
+                
+                // If the request was successful, parse the given data
+                if r.statusCode == 200 {
+                    
+                    if let d = data {
+                        
+                        // Parse the retrieved data
+                        parseMyJSON(d)
+                        
+                    }
+                    
+                }
+                
+            }
+        }
+        // Finally, we tell the task to start (despite the fact that the method is named "resume")
+        task.resume()
+        
+    } else {
+        
+        // The NSURL object could not be created
+        print("Error: Cannot create the NSURL object.")
+        
+    }
 }

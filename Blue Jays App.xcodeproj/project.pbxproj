@@ -30,6 +30,7 @@
 		0961A34D1E65FFB600565B4E /* Grade_11_Computer_Science_ISP_Proposal.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Grade_11_Computer_Science_ISP_Proposal.docx; sourceTree = SOURCE_ROOT; };
 		0961A3501E66093700565B4E /* image1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image1.JPG; path = ../image1.JPG; sourceTree = "<group>"; };
 		0961A3511E66093700565B4E /* image2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image2.JPG; path = ../image2.JPG; sourceTree = "<group>"; };
+		099949591EC7D39D00D68341 /* Checking.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Checking.playground; sourceTree = "<group>"; };
 		09C88F381EAD85D50067DE34 /* JaysAppParsingJSON.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JaysAppParsingJSON.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,6 +48,7 @@
 		0961A32F1E65FF3300565B4E = {
 			isa = PBXGroup;
 			children = (
+				099949591EC7D39D00D68341 /* Checking.playground */,
 				09596E371EB3C070007ACEBA /* Date and URL Obtain.playground */,
 				09C88F381EAD85D50067DE34 /* JaysAppParsingJSON.playground */,
 				0961A33A1E65FF3400565B4E /* Blue Jays App */,

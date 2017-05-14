@@ -1,11 +1,10 @@
 //
 //  ViewController.swift
-//  Blue Jays App
+//  SimpleTable
 //
-//  Created by Spencer Canavan on 2017-02-28.
+//  Created by Spencer Canavan on 2017-03-31.
 //  Copyright © 2017 Spencer Canavan. All rights reserved.
 //
-
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -14,7 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // If possible, make the view controller more in depth
     
     //This array will hold all of the data that I parse from the site
-    var arrayOfGameData = [String]()
+    var arrayOfGameData : [String] = []
     
     func scoresPresses(_ sender: Any) {
         // I want to click this button, and transition to a table, where the scores of past games and the dates of future games are loaded
@@ -45,36 +44,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var winningTeam : String = ""
         var winningPitcherName : String = ""
         var losingPitcherName : String = ""
+        var jaysName : String = ""
+        var oppName : String = ""
         
         // getJSON
         //
         // Purpose: Open a JSON file included in the playground Resources folder and return the contents of the file as JSON data
-        func getJSON(forResource resource : String, ofType type : String) -> Data? {
-            
-            
-            // Obtain the path to file in the playground bundle
-            guard let path = Bundle.main.path(forResource: resource, ofType: type) else {
-                
-                // Early exit from function with error
-                print("File path not found.")
-                return nil
-                
-            }
-            
-            // Read the raw data in the file
-            guard let data = FileManager.default.contents(atPath: path) else {
-                
-                // Early exit from function with error
-                print("Could not read data from file.")
-                return nil
-            }
-            
-            // Return the JSON data
-            return data
-            
-        }
-        
-        
         func parseMyJSON(_ JSON : Data) {
             
             var parsedData : [JaysDataList] = []
@@ -238,6 +213,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                             // changing the runs scored to integers
                             jaysRuns = homeRunsAsInt
                             oppRuns = awayRunsAsInt
+                            // setting the Jays name (I know it's not necessary but hey)
+                            jaysName = homeTeamName
+                            // Setting the opponents name
+                            oppName = awayTeamName
                             // getting the runs scored as strings with the winner correctly defined
                             jaysRunsString = homeTeamRuns
                             oppRunsString = awayTeamRuns
@@ -245,6 +224,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                             // changing the runs scored to integers
                             jaysRuns = awayRunsAsInt
                             oppRuns = homeRunsAsInt
+                            // setting the Jays name (I know it's not necessary but hey)
+                            jaysName = awayTeamName
+                            // setting the opponents name
+                            oppName = homeTeamName
                             // getting the runs scored as strings with the winner correctly defined
                             jaysRunsString = awayTeamRuns
                             oppRunsString = homeTeamRuns
@@ -255,10 +238,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         arrayOfGameData.append(gameScore)
                         
                         if jaysRuns - oppRuns > 0 {
-                            outcome = "won 😀"
+                            outcome = "won"
                             outcomeScore = (jaysRunsString + " to " + oppRunsString)
                         } else {
-                            outcome = "sadly lost"
+                            outcome = "lost"
                             outcomeScore = (oppRunsString + " to " + jaysRunsString)
                         }
                         print("Today the Blue Jays played at " + stadium)
@@ -269,8 +252,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     }
                     
                     // here we are going to attach the data that we parsed to the array to it can be read and printed to the app
-                    
-                    
+                    arrayOfGameData.append("" + outcome +  " " + jaysName + "" + jaysRunsString + " vs. " + oppName + "" + oppRunsString)
                 }
                 
                 
@@ -372,21 +354,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) ->
-        Int {
-            // Return the number of rows in the section.
-            return arrayOfGameData.count
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Return the number of rows in the section.
+        return arrayOfGameData.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
-        UITableViewCell {
-            let cellIdentifier = "Cell"
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,
-                                                     for: indexPath)
-            // Configure the cell...
-            cell.textLabel?.text = arrayOfGameData[indexPath.row]
-            return cell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "Cell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        
+        // Configure the cell...
+        cell.textLabel?.text = arrayOfGameData[indexPath.row]
+        
+        // Solution to the exercise
+        // cell.imageView?.image = UIImage(named: restaurantNames[indexPath.row])
+        
+        // Uncomment the line below (i.e. removing //) if you just want to display the same image
+        // cell.imageView?.image = UIImage(named: "restaurant")
+        
+        return cell
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 }
-
-

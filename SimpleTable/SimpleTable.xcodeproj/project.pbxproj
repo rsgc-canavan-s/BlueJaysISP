@@ -22,6 +22,7 @@
 		095E259C1E8ED08800C05C5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		095E259F1E8ED08800C05C5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		095E25A11E8ED08800C05C5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09F650B31EC7D1C40065979B /* CheckISP (good).playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "CheckISP (good).playground"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +39,7 @@
 		095E25891E8ED08700C05C5B = {
 			isa = PBXGroup;
 			children = (
+				09F650B31EC7D1C40065979B /* CheckISP (good).playground */,
 				095E25941E8ED08800C05C5B /* SimpleTable */,
 				095E25931E8ED08800C05C5B /* Products */,
 			);

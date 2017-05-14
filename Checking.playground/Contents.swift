@@ -197,7 +197,7 @@ func parseMyJSON(_ JSON : Data) {
                     // changing the runs scored to integers
                     jaysRuns = homeRunsAsInt
                     oppRuns = awayRunsAsInt
-                    // setting the Jays name (I know it's not necessary but hey)
+                    // setting the Jays name (I know it's not necessary, but hey)
                     jaysName = homeTeamName
                     // Setting the opponents name
                     oppName = awayTeamName
@@ -261,6 +261,12 @@ func getMyJSON() {
     
     let todayString = today.description
     
+    var todayInt : Int = 0
+    
+    var yesterdayInt : Int = 0
+    
+    var yesterdayString : String = ""
+    
     // Explode based on a deliminer of " "
     let todayStringParts = todayString.components(separatedBy: " ")
     
@@ -276,7 +282,13 @@ func getMyJSON() {
         day = components[2]
     }
     
-    actualURL = ((startOfURL) + (year) + "/month_" + (month) +  "/day_" + (day) + "/master_scoreboard.json")
+    todayInt = Int(day)!
+    
+    yesterdayInt = todayInt - 1
+    
+    yesterdayString = String(yesterdayInt)
+    
+    actualURL = ("" + (startOfURL) + (year) + "/month_" + (month) +  "/day_" + (yesterdayString) + "/master_scoreboard.json")
     
     // Define a URL to retrieve a JSON file from
     let address : String = actualURL
